@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Answer
+{% endblock %}
+{% block main %}
+<h1 id="answer" class ="">{{message}}</h1>
+<div class="image-container">
+    <img id="villainImage" src="" class="img-fluid img-intro">
+</div>
+<p><b>"{{chosen_answer}}"</b></p>
+<p class="fs-4 text-success" id="prueba" style="display: none;">The correct answer is: <b>{{previous_result}}</b></p>
+<div class="d-flex justify-content-center">
+    <form action="{{ url_for('answer') }}" method="post">
+        <input id="exercise" type="hidden">
+        <button class="btn btn-outline-primary button_spacing" type="submit">Next</button>
+    </form>
+</div>
+<script>
+    var message = "{{ message }}";
+    var imageURL;
+    var color_answer;
+    if (message === "Correct!") {
+        imageURL = "/static/{{ chosen_villain }} - correct.gif";
+        color_answer = "answer_correct display-5";
+    } else {
+        imageURL = "/static/{{ chosen_villain }} - incorrect.gif";
+        color_answer = "answer_incorrect display-5";
+        document.getElementById("prueba").style.display = "block";
+    }
+    document.getElementById("villainImage").src = imageURL;
+    document.getElementById("answer").className = color_answer;
+
+
+</script>
+{% endblock %}

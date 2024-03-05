@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    What to do
+{% endblock %}
+{% block main %}
+    <h1 class="mb-5">What to do</h1>
+    <p class="mx-5">This app will help you practice your multiplying habilities. After being introduced to the villain you'll be facing, you'll get <b>10 questions</b> that you must answer. Let's take a look at an example. By the way, don't be scared. It's only an image.</p>
+    <img src="/static/exercise_example.png" class="img-fluid img-intro">
+    <p>You have <b>20 seconds</b> to answer each question. Failing to answer in time will make your answer count as <span class="text-danger"><b>"incorrect"</b></span> (<img src="/static/closea.png" class="tildes">). You must type your answer inside the box ( <input autocomplete="off" class=my-2" style= "max-width: 7em;" placeholder="This is a box"> ) and press <button class="btn btn-primary">Send</button></p>
+    <p>If your answer is correct, a <img src="/static/checka.png" class="tildes"> will show up in the right margin of the screen. In order to beat the villain, you must get <b>at least 6</b> <img src="/static/checka.png" class="tildes">.</p>
+    <p>Once the exercise is finished, you'll have the option to start again or to see how good you did.</p>
+    <p>Depending on how many villains you defeat in a single day, you can <b>earn medals</b>. There's bronze, silver, gold and the super-rare medal (only for the best)</p>
+    <img class="little-medals mx-auto" src="static/bronze.png"><img class="little-medals mx-auto" src="static/silver.png"><img class="little-medals mx-auto" src="static/gold.png">
+    <p>As you continue doing exercises, the villains learn from your mistakes and try to use them against you, so your only choice is to improve your skills.</p>
+    <p>Do your best and don't give up!</p>
+    <a href="/" class="btn btn-outline-primary button_spacing">Start</a>
+
+{% endblock %}

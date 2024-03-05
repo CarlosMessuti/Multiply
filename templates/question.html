@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+{% block main %}
+    <form action="/" method="post">
+        <div class="mb-3">
+            <p>{{number1}} x {{number2}} =</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="answer" name="answer" placeholder="Answer" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Send</button>
+    </form>
+{% endblock %}

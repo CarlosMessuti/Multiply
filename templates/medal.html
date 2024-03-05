@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    medal
+{% endblock %}
+{% block main %}
+    <h1 class="display-1">Congratulations!</h1>
+    <p class="fs-4">You have won a <b>{{ medal }}</b> medal!</p>
+    <div class="image-container">
+        <img id="m_image" src="/static/{{ medal }}.gif" class="img-fluid">
+    </div>
+    <div class="d-flex justify-content-center">
+        <a href="/v_intro" class="btn btn-outline-primary button_spacing">Next</a>
+    </div>
+{% endblock %}

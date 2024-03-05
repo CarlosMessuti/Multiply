@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Exercises started</th>
+                <th>Villains defeated</th>
+                <th>Right answers</th>
+                <th>Wrong answers</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for history in history %}
+                <tr>
+                    <td>{{ history.wdate }}</td>
+                    <td>{{ history.exercise_number }}</td>
+                    <td>{{history.villains_defeated}}</td>
+                    <td>{{ history.number_correct }}</td>
+                    <td>{{ history.number_incorrect }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-outline-primary button_spacing">Home</a>
+
+{% endblock %}

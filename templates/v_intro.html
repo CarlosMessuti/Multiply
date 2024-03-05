@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    V-intro
+{% endblock %}
+{% block main %}
+    <p>You will face <b>{{chosen_villain}}</b>. In order to win, you must answer at least <b class="fs-5"> 6</b> questions correctly.</p>
+    <div class="image-container">
+        <img src="/static/{{chosen_villain}} - profile.png" class="img-fluid img-intro">
+    </div>
+    <p class="mx-auto text-wrap fw-bold fst-italic" style="max-width: 40rem;">"{{opening_phrase}}"</p>
+    <div class="d-flex justify-content-center">
+        <form action="{{ url_for('v_intro') }}" method="post">
+            <input id="exercise" type="hidden">
+            <button class="btn btn-outline-primary button_spacing" type="submit">Next</button>
+        </form>
+    </div>
+{% endblock %}

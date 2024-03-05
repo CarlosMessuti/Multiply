@@ -1,0 +1,45 @@
+/* Size for brand */
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #537fbe;
+}
+.button_spacing {
+    margin: 30px;
+ }
+
+/* castle image for index */
+.img-castillo {
+    max-width: 18%;
+    min-width: 10%;
+ }
+
+ .img-intro {
+    max-width: 20%;
+ }
+
+ .answer_correct {
+    color: green;
+ }
+
+ .answer_incorrect {
+    color: red;
+ }
+
+ .tildes {
+   max-height:1.2rem;
+   max-width:1.2rem;
+ }
+ .medals {
+   max-height: 10%;
+   max-width: 10%;
+ }
+ .little-medals {
+   max-height: 5%;
+   max-width: 5%;
+ }

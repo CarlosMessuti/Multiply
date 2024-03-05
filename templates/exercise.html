@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Exercise
+{% endblock %}
+{% block main %}
+    <div class ="d-flex justify-content-end me-5 mb-5">
+        <table>
+            <tbody>
+                    <tr>
+                        {% for row in progress %}
+                        <td><img class="tildes" src="{% if row.result == 'Correct!' %}/static/checka.png {% else %}/static/closea.png {% endif %}"></td>
+                        {% endfor %}
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/exercise" method="post" id="myForm">
+        <div>
+            <p>{{number1}} x {{number2}} =</p>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="answer" name="answer" placeholder="Answer" type="number">
+        </div>
+        <input type="hidden" name="timeout" id="timeout" value="false">
+        <button class="btn btn-primary my-4" type="submit">Send</button>
+    </form>
+    <p class="fw-bold">Time Remaining: <span id="countdown"></span> seconds</p>
+    <img id="medal" class="medals float-end me-4" style="display:none" src="/static/{{medal}}.png">
+{% endblock %}
+{% block scripts %}
+    <script>
+        function countdown(){
+            var form = document.getElementById("myForm");
+            var timeLimit = 20;
+            var countdownElement = document.getElementById("countdown");
+
+            var timeRemaining = timeLimit;
+            countdownElement.textContent = timeRemaining;
+
+            var countdownInterval = setInterval(function(){
+                timeRemaining--;
+                countdownElement.textContent = timeRemaining;
+
+                if (timeRemaining <= 0){
+                    clearInterval(countdownInterval)
+                    document.getElementById("timeout").value = "true";
+                    form.submit();
+                    }
+                }, 1000);
+            }
+            countdown();
+    </script>
+    <script>
+        var medal = "{{medal}}"
+        if (medal != 0) {
+            document.getElementById("medal").style.display = "block";
+        }
+    </script>
+{% endblock %}

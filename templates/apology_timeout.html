@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Apology time out
+{% endblock %}
+
+{% block main %}
+    <h1 class="display-5">Oops...</h1>
+    <img class="img-fluid img-intro" src="/static/Apology_time_out.png">
+    <p><b> "{{message}}" </b></p>
+    <form action="/exercise" method="post" name="resume">
+        <input type="hidden" name="resume" value="true">
+        <button class="btn btn-outline-primary button_spacing" type="submit" onsubmit="resetCountdown();">Continue!</button>
+    </form>
+    <a href="/history" class="btn btn-outline-primary button_spacing">Quit</a>
+{% endblock %}

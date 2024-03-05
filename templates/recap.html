@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recap
+{% endblock %}
+{% block main %}
+<h1 class="display-1">{{result}}!</h1>
+<div class="image-container">
+    <img id="villainImage" src="/static/{{chosen_villain}} - {{result}}.gif" class="img-fluid img-intro">
+</div>
+<p><b>"{{chosen_answer}}"</b></p>
+<div class="d-flex justify-content-center">
+    <form action="{{ url_for('recap') }}" method="post">
+        <input id="exercise" type="hidden">
+        <button class="btn btn-outline-primary button_spacing" type="submit">Continue!</button>
+    </form>
+    <a href="/history" class="btn btn-outline-primary button_spacing">Quit</a>
+</div>
+{% endblock %}
